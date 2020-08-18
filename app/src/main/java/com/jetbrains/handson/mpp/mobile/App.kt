@@ -7,6 +7,12 @@ import com.squareup.sqldelight.android.AndroidSqliteDriver
 class App : Application() {
     override fun onCreate() {
         super.onCreate()
-        initApplication(AndroidSqliteDriver(Servers.Schema, applicationContext, "servers.db"))
+        initApplication(
+            AndroidSqliteDriver(
+                Servers.Schema,
+                applicationContext,
+                "servers.db"
+            )
+        )
     }
 }
