@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
 import com.jetbrains.handson.mpp.mobile.R
-import com.jetbrains.handson.mpp.mobile.app
+import com.jetbrains.handson.mpp.mobile.myMppApp
 import com.jetbrains.handson.mpp.mobile.databinding.ActivityFormServerBinding
 import com.jetbrains.handson.mpp.mobile.models.ServerFormViewModel
 import com.jetbrains.handson.mpp.mobile.repositories.ServersRepository
@@ -18,7 +18,7 @@ import org.kodein.di.erased.instance
 
 class EditServerActivity : AppCompatActivity() {
 
-    private val repository: ServersRepository by app.kodein.instance()
+    private val repository: ServersRepository by myMppApp.kodein.instance()
     private var serverFormViewModel = ServerFormViewModel()
     private var serverId: Long = 0
 

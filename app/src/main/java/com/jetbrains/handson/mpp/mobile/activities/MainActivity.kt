@@ -9,7 +9,7 @@ import android.view.View
 import androidx.lifecycle.lifecycleScope
 import com.jetbrains.handson.mpp.mobile.R
 import com.jetbrains.handson.mpp.mobile.adapters.ServersAdapter
-import com.jetbrains.handson.mpp.mobile.app
+import com.jetbrains.handson.mpp.mobile.myMppApp
 import com.jetbrains.handson.mpp.mobile.db.Server
 import org.kodein.di.erased.instance
 import com.jetbrains.handson.mpp.mobile.repositories.ServersRepository
@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         const val CONNECTION_ERROR = 2
     }
 
-    private val repository : ServersRepository by app.kodein.instance()
+    private val repository : ServersRepository by myMppApp.kodein.instance()
     lateinit var adapter: ServersAdapter
     lateinit var serversList: List<Server>
 
