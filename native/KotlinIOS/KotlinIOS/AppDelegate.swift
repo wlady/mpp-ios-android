@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import core
+import SharedCode
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     override init() {
-        CoreAppKt.initializeCoreApp(sqlDriver: nil)
+        CoreAppKt.doInitApplication(sqlDriver: nil)
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

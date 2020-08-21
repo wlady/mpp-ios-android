@@ -1,6 +1,5 @@
-package com.jetbrains.handson.mpp.mobile
+package com.jetbrains.handson.mpp.mobile.base
 
-import com.jetbrains.handson.mpp.mobile.base.getSqlDriver
 import com.jetbrains.handson.mpp.mobile.repositories.ServersRepository
 import com.squareup.sqldelight.db.SqlDriver
 import io.ktor.client.HttpClient
@@ -15,14 +14,15 @@ class CoreApp(sqlDriver: SqlDriver) {
     }
 }
 
-var myAppIsInitialized = false
-    private set
-lateinit var myMppApp: CoreApp
-    private set
+var isInitialized = false
+//    private set
+lateinit var myApp: CoreApp
+//    private set
 
 fun initApplication(sqlDriver: SqlDriver? = null) {
-    if (!myAppIsInitialized) {
-        myMppApp = CoreApp(sqlDriver ?: getSqlDriver("servers.db"))
-        myAppIsInitialized = true
+    if (!isInitialized) {
+        myApp =
+            CoreApp(sqlDriver ?: getSqlDriver("servers.db"))
+        isInitialized = true
     }
 }
