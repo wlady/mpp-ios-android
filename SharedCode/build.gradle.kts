@@ -40,6 +40,7 @@ kotlin {
         implementation("com.squareup.sqldelight:runtime:1.4.0")
         implementation("org.kodein.di:kodein-di:7.0.0")
         implementation("io.ktor:ktor-client-core:1.3.2")
+
     }
 
     sourceSets["androidMain"].dependencies {
@@ -48,6 +49,7 @@ kotlin {
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.5")
         implementation("com.squareup.sqldelight:android-driver:1.4.0")
         implementation("io.ktor:ktor-client-android:1.3.2")
+        implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
     }
 
     sourceSets["iosMain"].dependencies {

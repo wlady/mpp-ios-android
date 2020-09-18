@@ -6,11 +6,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.jetbrains.handson.mpp.mobile.R
 import com.jetbrains.handson.mpp.mobile.adapters.ServersAdapter
 import com.jetbrains.handson.mpp.mobile.base.myApp
 import com.jetbrains.handson.mpp.mobile.db.Server
+import com.jetbrains.handson.mpp.mobile.models.ServerViewModel
 import org.kodein.di.erased.instance
 import com.jetbrains.handson.mpp.mobile.repositories.ServersRepository
 import kotlinx.android.synthetic.main.activity_main.*
@@ -37,6 +39,7 @@ class MainActivity : AppCompatActivity() {
             startActivityForResult(intent, EDITED)
         }
 
+        val viewModel = ViewModelProvider.Factory(ServerViewModel::class.java)
         lifecycleScope.launch {
             progressBar.visibility = View.VISIBLE
             serversList = repository.getAll()
